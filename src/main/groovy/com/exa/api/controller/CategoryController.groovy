@@ -12,25 +12,25 @@ class CategoryController {
     @GetMapping('')
     List<Category> findAll() {
         categoryService.findAll()
-        }
-
-@GetMapping('{id}')
-Category findById(@PathVariable('id') int id) {
-    categoryService.findById(id)
     }
 
-@PostMapping()
-Category save(@RequestBody Category category) {
-    categoryService.save(category)
+    @GetMapping('{id}')
+    Category findById(@PathVariable('id') int id) {
+        categoryService.findById(id)
     }
 
-@PutMapping('{id}')
-Category update(@RequestBody Category category, @PathVariable('id') int id) {
-    categoryService.update(category, id)
+    @PostMapping()
+    Category save(@RequestBody Category category) {
+        categoryService.save(category)
     }
 
-@DeleteMapping('{id}')
-Category delete(@PathVariable('id') int id) {
-    categoryService.delete(id)
+    @PutMapping('{id}')
+    Category update(@RequestBody Category category, @PathVariable('id') int id) {
+        categoryService.update(category, id)
+    }
+
+    @DeleteMapping('{id}')
+    Category delete(@PathVariable('id') int id) {
+        categoryService.delete(id)
     }
 }
